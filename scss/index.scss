@@ -1,20 +1,52 @@
+$mainTextColor: #091420;
+
+@mixin centerButtonContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+
+
 html, body{
     background-color: #d2dfef;
     font-family: 'Noto Sans', sans-serif;
+    min-width: 400px;
 }
 
-$mainTextColor: #091420;
+*{
+    padding: 0;
+    margin: 0;
+}
+
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100px;
+    margin-bottom: 100px;
+    position: relative;
 }
 
 nav ul{
     display: flex;
     list-style: none;
     gap: 1rem;
+}
+
+main{
+
+    position: relative;
+    z-index: 1;
+
+    h1{
+        font-size: 4rem;
+        max-width: 600px;
+    }
+
 }
 
 a{
@@ -30,18 +62,70 @@ a{
 }
 
 .contact-button{
-    all:unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
     color: #ec6d48;
+    background-color: transparent;
     border: 1px solid #ec6d48;
-    padding: 4px 8px;
-    border-radius: 1rem;
+    @include centerButtonContent();
+}
+
+.contact-now-button{
+    all:unset;
+    background-color: #ec6d48;
+    color: white;
+    margin-top:2rem;
+    @include centerButtonContent();
 }
 
 .logo{
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+.burger-button{
+    display: none;
+}
+
+.burger-button i{
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+.turbine-image{
+    position: absolute;
+    width: 800px;
+    right: -200px;
+}
+
+@media screen and (max-width: 1200px) {
+  
+  }
+
+
+@media screen and (max-width: 992px) {
+
+    .burger-button{
+        display: block;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    .contact-button{
+        display: none;
+    }
+
+  }
+
+  @media screen and (max-width: 576px) {
+
+    main{
+    
+        h1{
+            font-size: 3rem;
+        }
+    
+    }
+
+  }
