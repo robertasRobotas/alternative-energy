@@ -1,0 +1,47 @@
+html, body{
+    background-color: #d2dfef;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+$mainTextColor: #091420;
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: $mainTextColor;
+    
+}
+
+.main-wrapper{
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+.contact-button{
+    all:unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    color: #ec6d48;
+    border: 1px solid #ec6d48;
+    padding: 4px 8px;
+    border-radius: 1rem;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
