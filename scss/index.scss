@@ -1,4 +1,6 @@
 $mainTextColor: #091420;
+$attentionColor: #ec6d48;
+
 
 @mixin centerButtonContent{
     display: flex;
@@ -14,6 +16,7 @@ html, body{
     background-color: #d2dfef;
     font-family: 'Noto Sans', sans-serif;
     min-width: 400px;
+    overflow-x: hidden;
 }
 
 *{
@@ -43,8 +46,8 @@ main{
     z-index: 1;
 
     h1{
-        font-size: 4rem;
-        max-width: 600px;
+        font-size: 6rem;
+        max-width: 1000px;
     }
 
 }
@@ -55,22 +58,35 @@ a{
     
 }
 
-.main-wrapper{
+
+.wrapper{
     padding-left: 2rem;
     padding-right: 2rem;
-
+    overflow: hidden;
+    padding-bottom: 2rem;
 }
 
+.main-wrapper{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bolded-text{
+    font-weight: 700;
+}
+
+
 .contact-button{
-    color: #ec6d48;
+    color: $attentionColor;
     background-color: transparent;
-    border: 1px solid #ec6d48;
+    border: 1px solid $attentionColor;
     @include centerButtonContent();
 }
 
 .contact-now-button{
     all:unset;
-    background-color: #ec6d48;
+    background-color: $attentionColor;
     color: white;
     margin-top:2rem;
     @include centerButtonContent();
@@ -95,7 +111,75 @@ a{
     position: absolute;
     width: 800px;
     right: -200px;
+    min-width: 400px;
 }
+
+
+.company{
+    position: absolute;
+    bottom: 80px;
+    border-top: 1px solid rgba(175, 175, 175, 0.634);
+    width: 200px;
+
+    h3{
+        font-weight: 600;
+    }
+
+    h6{
+        margin-top: 0.2rem;
+        font-weight: 200;
+    }
+
+}
+
+
+.about{
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: 1.2rem;
+}
+
+.about-company{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    padding-bottom: 2rem;
+
+    h1{
+        font-size: 2.4rem;
+    }
+}
+
+.read-more-btn{
+    all: unset;
+    color: $attentionColor ;
+    margin-top: 1rem;
+}
+
+.statistics{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 2rem;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span{
+            &:nth-child(1){
+                font-size: 2rem;
+            }
+
+            &:nth-child(2){
+                font-size: 0.6rem;
+            }
+        }
+       
+    }
+
+}
+
+
 
 @media screen and (max-width: 1200px) {
   
@@ -103,6 +187,14 @@ a{
 
 
 @media screen and (max-width: 992px) {
+
+    main{
+    
+        h1{
+            font-size: 4rem;
+        }
+    
+    }
 
     .burger-button{
         display: block;
@@ -118,6 +210,31 @@ a{
 
   }
 
+  @media screen and (max-width: 630px) {
+
+    main{
+        h1{
+            font-size: 3rem;
+        }
+    }
+
+    .about-company{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-bottom: 2rem;
+
+        h1{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .statistics{
+        grid-template-columns: repeat(2, 1fr);
+        gap:2rem;
+    }
+
+  }
+
   @media screen and (max-width: 576px) {
 
     main{
@@ -129,3 +246,6 @@ a{
     }
 
   }
+
+
+
